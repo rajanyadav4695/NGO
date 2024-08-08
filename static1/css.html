@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .content {
+        position: relative;
+        background: black;
+        width: 300px;
+        margin: 50px;
+        font-size: 16px;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        border: 3px solid aqua;
+      }
+      .content::after {
+        height: 100%;
+        width: 100%;
+        content: "";
+        background-color: black;
+        color: white;
+        position: absolute;
+        translate: -50% 50%;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        padding: 10px;
+        background: conic-gradient(
+          from 0deg,
+          transparent 70%,
+          #ff5f6d,
+          #ffc371,
+          #ffd700,
+          #32cd32,
+          #00fa9a,
+          #1e90ff,
+          #9370db,
+          #ff5f6d
+        );
+        border-radius: 10px;
+        animation: 3s rotate linear infinite;
+      }
+      @property --animation {
+      }
+      .content::before {
+        filter: blur(0.5);
+        opacity: 0.8;
+      }
+      @keyframes rotate {
+        from {
+          --direction: 0deg;
+        }
+        to {
+          --direction: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <content>
+      bdfvksnef,jcvbdkjfvrsjthn cvdjhcbefjd,vnrsl dcvzfmvn,fvm .fd,
+      kfbvkjcgvnbvkrjtfvkrhdfmhv
+    </content>
+  </body>
+</html>
