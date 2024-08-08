@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+
+<div class="text-center fs-2"><b>LOG</b><b class="txt-mycolor">
+    IN
+<i class="fa-solid fa-user"></i>
+
+</b></div>
+
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 bg-mycolor text-center">
+    <h2 class="text-light mt-1">LifeSaving<b class="text-warning">NGO</b></h2></br>
+    <h3 class="text-light">Welcome To <b class="text-warning">Our NGO</b></h3>
+            <p class="ps-4 text-light fs-3">It's Our Plesure That You Are Joining Us</p>
+         </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 bg-mycolor">
+            <img src="{% static 'images/23.jpg'%}" max-height="200px;" width="650px;" class="py-5"/>
+        </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 mt-3 bg-light py-2">
+        <p class="fs-3 text-center mt-2 fw-bolder">Login Here</p>
+        <a href="#"><i class="fa-brands fa-twitter text-dark"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook text-dark"></i></a>
+        <form method="post">
+            Name<br/>
+        <input type="text" class="form-control" required placeholder="Enter your full name"/>
+
+            Email<br/>
+        <input type="email" class="form-control" placeholder="Enter your email"/>
+            Phone <br/>
+        <input type="number" class="form-control" placeholder="Enter your number"/>
+            Address<br/>
+        <textarea class="form-control" placeholder="Enter your address"></textarea>
+            PinCode<br/>
+        <input type="number"class="form-control"  placeholder="enter your pincode"/>
+            Occupation
+        <input type="text" class="form-control" placeholder="enter your Occupation"/>
+            Password
+        <input type="password" class="form-control" placeholder="enter your password"/>
+
+            <input type="submit" value="LOGIN" class="form-control btn bg-mycolor text-light mt-3"/>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

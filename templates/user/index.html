@@ -1,0 +1,185 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+
+<div class="row">
+
+    <div class="col-sm-12 p-2">
+      <!--start slider-->
+       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/c.jpg'%}" style="max-height:445px" class="d-block w-100 rounded rounded-3" alt="...">
+    </div>
+    {% for i in sd %}
+    <div class="carousel-item">
+      <img src="/{{i.slider_picture}}" style="max-height:445px;"  class="d-block w-100 rounded rounded-3" alt="...">
+    </div>
+     {% endfor %}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        <!--end slider-->
+        <!-- start section -->
+    <div class="row bg-light">
+        <div class="col-sm-12 text-center bg-mycolor"><h4>How we work to make a difference</h4></div>
+    <div class="col-lg-3 col-md-6 col-sm-12" style="padding-top:10px;">
+            <a href="/user/poshan/"> <img src="{% static 'images/hhhhh.jpg'%}" class="card-img-top d-block mx-auto" style="height:160px; width:160px; border-radius:50%; border:4px solid #e3e3e3;"></a><br/>
+
+                <b style="margin-left:54px; background:#e3e3e3;">PM-POSHAN Programme</b>
+
+    </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" style="padding-top:10px;">
+            <a href="/user/breakfast/"> <img src="{% static 'images/hju.jpg'%}" class="card-img-top d-block mx-auto" style="height:160px; width:160px; border-radius:50%; border:4px solid #e3e3e3;"></a><br/>
+
+                <b style="margin-left:110px; background:#e3e3e3;">Breakfast</b>
+
+    </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" style="padding-top:10px;">
+            <a href="/user/feeding/"> <img src="{% static 'images/uiu.jpg'%}" class="card-img-top d-block mx-auto" style="height:160px; width:160px; border-radius:50%; border:4px solid #e3e3e3;"></a><br/>
+
+                <b style="margin-left:80px; background:#e3e3e3;">Anganwadi Feeding</b>
+
+    </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" style="padding-top:10px;">
+            <a href="/user/mother/"> <img src="{% static 'images/yty.jpg'%}" class="card-img-top d-block mx-auto" style="height:160px; width:160px; border-radius:50%; border:4px solid #e3e3e3;"></a><br/>
+
+                <b style="margin-left:90px; background:#e3e3e3;">Homeless Mother</b>
+
+    </div>
+        </div>
+<!-- end section -->
+    </div>
+
+</div>
+<!-- start news-->
+<div class="row news py-3" style="background:white !important">
+  <div class="text-center fs-2">Upcomming <b class="txt-mycolor">Events</b></div>
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+        {% for i in uedata %}
+    <div class="col-sm-3 py-2">
+      <div class="card ">
+        <img src="/{{i.event_picture}}" class="card-img-top"/>
+        <div class="card-body">
+          <h5 class="card-title">{{i.event_title}}</h5>
+            <span>{{i.event_purpose}}</span>
+          </br>
+          <a href="/user/viewevent?ms={{i.id}}" class="btn bg-mycolor text-dark mt-2 btn-sm rounded-pill">View more
+          <i class="fa-solid fa-eye"></i> </a></br>
+            <span class="text-muted" style="font-size:14px;">
+              <i class="fa-solid fa-calendar-days"></i>
+                {{i.event_date}}
+              </span>
+
+        </div>
+      </div>
+    </div>
+        {% endfor %}
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+    </div>
+  </div>
+</div>
+<!-- end news-->
+<div class="row donator py-4 bg-mycolor">
+    <div class="text-center fs-2 pb-2">Our Great  <b class="text-light">Fondation</b></div>
+
+    {% for i in ddata %}
+    <div class="col-lg-2 col-md-4 col-sm-12">
+<div class="card pt-3">
+   <a href="/user/volunteerlist?did={{i.id}}"> <img src="/{{i.picture}}" class="card-img-top d-block mx-auto" style="height:100px;width:100px;border-radius:50%;border:4px solid #e3e3e3;"/></a>
+    <div class="card-body mt-3" style="background:#e3e3e3;">
+        <b>{{i.name}}</b><br/>
+        <small><i class="fa-solid fa-indian-rupee-sign"></i> Amount : {{i.rupees}}/-</small>
+    </div>
+</div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row about" style="background:#f2f2f2;">
+      <div class="text-center fs-2">About <b class="txt-mycolor">Us</b></div>
+<div class="row py-3" style="text-align:justify">
+    <div class="col-sm-6 p-5">
+        <b>“At least 463 million school
+            children in the world, were unable to access
+            remote learning during 2020 ” – UNICEF</b>
+        <p>
+           The major contributing factor to reduced learning capabilities in
+            children is directly impacted by health and nutrition. Evidence in India
+            has shown that food insecurity during childhood reduced reading capability and numeracy scores while resulting in depleting short-term memory. Mid-day meals are a great incentive to bring children back to school and a means to keep their nutritional levels in check. Nutritious meals
+            help children concentrate in c
+            lass and help in eliminating classroom hunger.
+        </p>
+    </div>
+    <div class="col-sm-6">
+<img src="{% static 'images/boy2.png'%}" class="img-fluid"/>
+    </div>
+</div>
+</div>
+<div class="row donator"></div>
+<div class="row volunteers">
+     <div class="text-center fs-2">Our Gracious <b class="txt-mycolor">Givers Family</b></div>
+<div class="col-sm-12">
+    <div class="row py-3">
+        <!-- volunteer-->
+        {% for i in vdata %}
+        <div class="col-lg-2 col-md-4 col-sm-12">
+                <div class="card">
+                    <img src="/{{i.picture}}" style="max-height:150px;" class="card-img-top img-thumbnail"/>
+
+            <div class="card-body">
+ <a href="/user/volunteerlist/?vid={{i.email}}" style="text-decoration:none;color:grey;"> <p class="card-text text-center"><big><b>{{i.name}}</b></big><br/>
+      {{i.current_position}}
+  </p>
+ </a>
+
+            </div>
+                     </div>
+        </div>
+        {% endfor %}
+        <!-- end volunteer -->
+    </div>
+</div>
+</div>
+<!--start our vision mission-->
+<div class="row py-5 bg-mycolor  py-3">
+  <div class="col-sm-4">
+    <img src="{% static 'images/v.png'%}" style="max-width:400px;"/>
+  </div>
+  <div class="col-sm-8 py-2">
+   <h1 class="text-center"><b>The Akshaya Patra Foundation</b></h1>
+    <span class="fs-5" style="text-align:justify;">The Akshaya Patra foundation is not-for-profit organization headquartered in
+    Bengaluru , India.The Foundation strives to eliminate classroom hunger by
+    implementing the <b>PM POSHAN</b>(Mid -Day Meal)Programme. It provides nutiritious
+    meals to children studying in government school  and government schoold and government
+    aided schools.
+    Akshaya Patra also aims to counter mainutrition and support the right to eduction
+    chidren hailing from socio-economally challenging backgrounds.</span><br/>
+    <div class="row">
+        <div class="col-sm-6 fs-3 px-5  border-end border-2" >
+            Our Vision
+           <p class="fs-5">No Child In India shall be deprived<br/>
+      Of Education because of hunger</p>
+        </div>
+        <div class="col-sm-6 fs-3 px-5">
+                    Our Mission
+           <p class="fs-5">No Child In India shall be deprived<br/>
+      Of Education because of hunger</p>
+        </div>
+  </div>
+     <a href="/user/vissionmission/" class="btn btn-dark text-light rounded-pill">View More</a>
+</div>
+</div>
+
+
+{% endblock %}

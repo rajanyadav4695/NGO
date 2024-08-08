@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .d{
+    font-size:17px;
+    padding-left:20px;
+    }
+    .j:hover{
+        border-radius: 20px;
+        border: 2px solid yellow;
+        background: gray;
+        box-shadow: 0px 4px 0px 0px brown;
+        transition: all 1s;
+    }
+    .j{
+        border-radius: 20px;
+        border: 2px solid yellow;
+        background: gray;
+    }
+</style>
+<div class="text-center fs-2">Contact <b class="txt-mycolor">
+    Us
+<i class="fa-solid fa-phone-volume"></i>
+</b></div>
+<div class="row">
+   <div class="col-sm-2"></div>
+   <div class="col-sm-8 ">
+    <div class="row">
+        <div class="col-sm-7 mb-3 p-4 j">
+            <form method="post">
+                {% csrf_token %}
+            Your Name*<input type="text" name="name" placeholder="Enter Your Name*" class="form-control" required></br>
+            Your Number<input type="number" name="mobile" placeholder="Enter Your Number*" class="form-control" required></br>
+            Email-Id<input type="email" name="email" placeholder="Enter Your Email-Id*" class="form-control" required></br>
+            Message<textarea  placeholder="Enter Your Message*" name="msg" class="form-control" ></textarea></br>
+            <input type="submit" value="Send Message" class="form-control btn text-color black w-50 fs-5" style="background:var(--bgcolor) !important;">
+         </form>
+        </div>
+        <div class="col-sm-5 bg-light mb-3">
+            <div class="fs-3">Contact Info</div></br>
+            <div class="fs-5">
+                <i class="fa-solid fa-location-dot"></i>
+               <b class="txt-mycolor">Office Address</b> </br>
+                <p class="d">
+                    Jaunpur,</br>
+                    Uttar Pradesh,</br>
+                    222002
+                </p>
+
+            </div>
+            <div class="fs-5">
+            <i class="fa-solid fa-square-phone"></i>
+               <b class="txt-mycolor">Call Us</b> </br>
+                <p class="d">
+                    +91-6391820086</br>
+
+                </p>
+
+            </div>
+
+            <div class="fs-5">
+            <i class="fa-solid fa-envelope"></i>
+               <b class="txt-mycolor">Mail Us</b> </br>
+                <p class="d">
+                    yrony4695@gmail.com</br>
+
+                </p>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+   </div>
+   <div class="col-sm-2"></div>
+
+</div>
+{% endblock %}
